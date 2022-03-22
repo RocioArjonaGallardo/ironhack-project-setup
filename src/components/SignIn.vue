@@ -3,9 +3,6 @@
   <div class="container px-4 mx-auto">
     <div class="max-w-sm mx-auto">
       <div class="mb-6 text-center">
-        <!-- <a class="inline-block mb-6" href="#">
-          <img class="h-16" src="flex-ui-assets/logos/flex-circle-green.svg" alt="">
-        </a> -->
         <h3 class="mb-4 text-2xl md:text-3xl font-bold">Sign In</h3>
       </div>
       <form action="">
@@ -36,3 +33,13 @@
   </div>
 </section>
 </template>
+
+<script>
+export default {
+  name: 'SignIn'
+}
+</script>
+
+<style>
+
+</style>

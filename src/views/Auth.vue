@@ -1,14 +1,12 @@
 <template>
-  <div>This is auth...</div>
-  <NavBar />
-  <SignIn />
+  <Nav />
   
 </template>
-<script>
+<script setup>
 import SignIn from '../components/SignIn.vue';
 import SignUp from '../components/SignUp.vue';
-import NavBar from '../components/Nav.vue';
-import { StoreToRef } from "pinia";
-import { UserSignStore } from '../store/user';
-const main = UserSignStore();
+import Nav from '../components/Nav.vue';
+// import { StoreToRef } from "pinia";
+// import { UserSignStore } from '../store/user.js';
+// const main = UserSignStore();
 </script>

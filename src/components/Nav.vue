@@ -1,7 +1,29 @@
 <template>
-  <div class="md:container md:mx-auto bg-teal-600 py-24 md:py-32 text-center w-full h-full">
-  <h1 class="mb-1 text-3xl md:text-2xl text-white font-bold">
-    Welcome to the Vue Task App
-  </h1>
-  </div>
+  
+  <header class="bg-main-green text-white">
+      <div class="container py-5 px-4 flex flex-col gap-4 items-center sm:flex-row">
+        <div class="md:container md:mx-auto bg-teal-600 py-24 md:py-32 text-center w-full h-full">
+           <h1 class="mb-1 text-3xl md:text-2xl text-white font-bold">
+             Welcome to the Vue Task App
+           </h1>
+           </div>
+        <div class="flex items-center gap-x-4">
+          <nav>
+            <router-link to="/">Home</router-link> |
+            <router-link to="/auth">Log In</router-link> |
+          </nav>
+            <router-view/>
+          </div>
+    </div>
+  </header>
 </template>
+
+<script>
+export default {
+
+}
+</script>
+
+<style>
+
+</style>

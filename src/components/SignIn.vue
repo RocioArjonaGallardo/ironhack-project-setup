@@ -14,7 +14,7 @@
           <label class="block mb-2 text-coolGray-800 font-medium" for="">Password</label>
           <input class="appearance-none block w-full p-3 leading-5 text-coolGray-900 border border-coolGray-200 rounded-lg shadow-md placeholder-coolGray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50" type="password" placeholder="Password">
         </div>
-        <div class="flex flex-wrap items-center justify-between mb-6">
+        <!-- <div class="flex flex-wrap items-center justify-between mb-6">
           <div class="w-full md:w-1/2">
             <label class="relative inline-flex items-center">
               <input class="form-checkbox appearance-none" type="checkbox">
@@ -22,11 +22,11 @@
               
             </label>
           </div>
-        </div>
+        </div> -->
         <a class="inline-block py-2 px-7 mb-6 w-full text-base text-green-50 font-medium text-center leading-6 bg-black hover:bg-teal-600 focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 rounded-xl shadow-sm" href="#">Sign In</a>
         <p class="text-center">
           <span class="text-xs font-medium">Don’t have an account? </span>
-          <a class="inline-block text-xs font-medium text-teal-600 hover:text-green-600 hover:underline" href="./views/SignUp.vue"> Sign up</a>
+          <a class="inline-block text-xs font-medium text-teal-600 hover:text-green-600 hover:underline" href="./SignUp.vue"> Sign up</a>
         </p>
       </form>
     </div>

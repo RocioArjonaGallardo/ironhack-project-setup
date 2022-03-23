@@ -1,13 +1,11 @@
 <template>
   <header>
-      <h1>Ironhack To do app</h1>
+      <h1 class="text-3xl font-bold">This is the app header component</h1>
   </header>
 </template>
 
-<script>
-export default {
-    name: 'Header'
-}
+<script setup>
+
 </script>
 
 <style>

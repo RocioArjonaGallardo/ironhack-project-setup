@@ -25,17 +25,12 @@
         </div>
         <div class="flex flex-wrap items-center justify-between mb-6">
           <div class="w-full md:w-1/2">
-            <label class="relative inline-flex items-center">
-              <input class="form-checkbox appearance-none" type="checkbox">
-              <img class="absolute top-1/2 transform -translate-y-1/2 left-0" src="flex-ui-assets/elements/sign-up/checkbox-icon.svg" alt="">
-              
-            </label>
           </div>
         </div>
-        <a class="inline-block py-2 px-7 mb-6 w-full text-base text-green-50 font-medium text-center leading-6 bg-black hover:bg-teal-600 focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 rounded-xl shadow-sm" href="#">Register</a>
+        <!-- <button class="inline-block py-2 px-7 mb-6 w-full text-base text-green-50 font-medium text-center leading-6 bg-black hover:bg-teal-600 focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 rounded-xl shadow-sm" href="#">Register</button> -->
         <p class="text-center">
           <span class="text-xs font-medium">Have an account already? </span>
-          <a class="inline-block text-xs font-medium text-teal-600 hover:text-green-600 hover:underline" href="./views/SignIn.vue"> Sign In</a>
+          <a class="inline-block text-xs font-medium text-teal-600 hover:text-green-600 hover:underline" href="./SignIn.vue"> Sign In</a>
         </p>
       </form>
     </div>

@@ -3,8 +3,8 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
     fontFamily: {
-      rocioTitle: ["Open Sans", "Sans-serif"],
-      rocioBody: ["Roboto", "Sans-serif"],
+      rocioTitle: ["Roboto", "Sans-serif"],
+      rocioBody: ["Open Sans", "Sans-serif"],
       diegoTest: ["Niramit", "Sans-serif"],
     },
     extend: {},

@@ -1,6 +1,10 @@
 <template>
   <header>
-      <h1 class="text-3xl font-bold">This is the app header component</h1>
+      <div class="md:container md:mx-auto bg-teal-600 py-12 md:py-32 flex flex-col items-center w-full h-full">
+        <img class="w-14" src="../assets/logo.png" alt="">
+        <h1 class="m-4 text-3xl md:text-2xl text-white font-semibold font-rocioTitle">WELCOME</h1>
+        
+      </div>
   </header>
 </template>
 

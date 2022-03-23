@@ -22,7 +22,17 @@ Lighting designer for theater in my spare time. 🎭
 
 Learn how to develop [SPA](https://en.wikipedia.org/wiki/Single-page_application) (single page applications) using Vue 3 and other technologies.
 
+Two main challeges:
+
+1. Create a database to use in the project.
+
+2. Learn the basic syntax for working with VUE3.
+
 ## Big Mistake
+
+- Jump from one task to another without finishing any.
+
+- Do not organize the project into small tasks to be done each time.
 
 ## Demo
 

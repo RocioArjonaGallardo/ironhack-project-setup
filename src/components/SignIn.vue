@@ -1,9 +1,9 @@
 <template>
-<section class="py-24 md:py-32 bg-white background-position: center;" >
-  <div class="container px-4 mx-auto">
+<section class="bg-white flex justify-center">
+  <div class="container w-3/5 px-4 md:mx-auto">
     <div class="max-w-sm mx-auto">
       <div class="mb-6 text-center">
-        <h3 class="mb-4 text-2xl md:text-3xl font-bold">Sign In</h3>
+        <h3 class="mt-4 text-2xl md:text-3xl font-bold">Sign In</h3>
       </div>
       <form action="">
         <div class="mb-6">
@@ -23,11 +23,11 @@
             </label>
           </div>
         </div> -->
-        <a class="inline-block py-2 px-7 mb-6 w-full text-base text-green-50 font-medium text-center leading-6 bg-black hover:bg-teal-600 focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 rounded-xl shadow-sm" href="#">Sign In</a>
-        <p class="text-center">
+        <!-- <a class="inline-block py-2 px-7 mb-6 w-full text-base text-green-50 font-medium text-center leading-6 bg-black hover:bg-teal-600 focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 rounded-xl shadow-sm" href="#">Sign In</a> -->
+        <!-- <p class="text-center mb-8">
           <span class="text-xs font-medium">Don’t have an account? </span>
           <a class="inline-block text-xs font-medium text-teal-600 hover:text-green-600 hover:underline" href="./SignUp.vue"> Sign up</a>
-        </p>
+        </p> -->
       </form>
     </div>
   </div>

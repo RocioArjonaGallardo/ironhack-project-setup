@@ -13,6 +13,7 @@ export default {
 
 <template>
   <div>
+    <h1>home page</h1>
     <Nav />
     <TodoList />
   </div>

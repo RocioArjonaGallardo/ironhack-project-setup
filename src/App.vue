@@ -1,6 +1,7 @@
 <template>
-  <section class="bg-white w-full">
-    <router-view class="app-main" />
+  <section>
+    <router-view  />
+    
     <!-- your routes will load inside of these tags -->
   </section>
   
@@ -11,6 +12,9 @@ import { onMounted } from "vue";
 import { storeToRefs } from "pinia";
 import { useRouter } from "vue-router";
 import { useUserStore } from "./store/user.js";
+
+import Auth from "./views/Auth.vue";
+
 
 const router = useRouter();
 const userStore = useUserStore();

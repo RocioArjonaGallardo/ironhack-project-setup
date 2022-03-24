@@ -1,4 +1,5 @@
 <template>
+<h1>signin view</h1>
 <section class="flex justify-center">
   <div class="container w-3/5 px-4 md:mx-auto">
   <!--form header -->

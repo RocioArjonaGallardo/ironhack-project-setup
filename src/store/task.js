@@ -5,7 +5,7 @@ export const useTaskStore = defineStore("tasks", {
   id: "taskStore",
   state: () => ({
     tasks: null,
-    is_complete: "To-do",
+    status: "To-do",
   }),
   actions: {
     getId() {
@@ -29,33 +29,33 @@ export const useTaskStore = defineStore("tasks", {
       try {
         const { data, error } = await supabase
           .from("tasks")
-          .insert([{ title: task, user_id: id, is_complete: status[0] }]);
+          .insert([{ title: task, user_id: id, is_complete: statuses }]);
         if (error) throw error;
         return data;
       } catch (error) {
         console.log(error);
       }
     },
-    async deleteTaks(task) {
+    async deleteTaks() {
       const id = this.getId();
       try {
         const { data, error } = await supabase
           .from("tasks")
           .delete()
-          .match({ title: "" });
+          .match({ id: id });
         if (error) throw error;
         return data;
       } catch (error) {
         console.log(error);
       }
     },
-    async updateTask(task) {
+    async updateTask(title) {
       const id = this.getId();
       try {
         const { data, error } = await supabase
           .from("tasks")
-          .update({ title: task })
-          .match({ title: this.task });
+          .update({ title: title })
+          .match({ id: this.id });
         if (error) throw error;
         return data;
       } catch (error) {
@@ -68,8 +68,8 @@ export const useTaskStore = defineStore("tasks", {
       try {
         const { data, error } = await supabase
           .from("tasks")
-          .update({ is_complete: status })
-          .match({ is_complete: this.is_complete });
+          .update({ is_complete: this.status })
+          .match({ id: this.tasks.id });
         if (error) throw error;
         return data;
       } catch (error) {

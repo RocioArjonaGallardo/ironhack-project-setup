@@ -41,11 +41,11 @@
                 @click="changeStatus"
                 class="pointer"
                 :class="{
-                  danger: task.status === 'To-do',
-                  warning: task.status === 'In-progress',
-                  success: task.status === 'Done',
+                  danger: is_complete === 'To-do',
+                  warning: is_complete === 'In-progress',
+                  success: is_complete === 'Done',
                 }"
-                >{{ task.status }}</span
+                >{{ task.is_complete }}</span
               >
             </td>
             <td class="text-center border-2 p-3">
@@ -91,7 +91,7 @@ export default {
     return {
       task: "",
       editedTask: null,
-      status: ["To-do", "In-progress", "Done"],
+      statuses: ["To-do", "In-progress", "Done"],
       tasks: [],
     };
   },
@@ -113,22 +113,22 @@ export default {
     },
 
     async deleteTask() {
-      const delTask = await this.taskStore.deleteTask(this.task);
+      const delTask = await this.taskStore.deleteTask();
       this.task = delTask;
       console.log(delTask);
       // this.tasks.splice(index, 1);
     },
 
     async editTask() {
-      const task = await this.taskStore.updateTask(this.task);
-      this.task = task;
+      const task = await this.taskStore.updateTask(this.editedTask);
+      this.editedTask = task;
       console.log(task);
       // this.task = this.tasks[index].title;
       // this.editedTask = index;
     },
 
     async changeStatus() {
-      const status = await this.taskStore.statusTask(this.status);
+      const status = await this.taskStore.statusTask(this.statuses);
       this.is_complete = status;
       console.log(status);
       // let newIndex = this.is_complete.indexOf(this.tasks[index].status);

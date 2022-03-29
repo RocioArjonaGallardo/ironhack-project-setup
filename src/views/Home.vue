@@ -1,4 +1,6 @@
 <script>
+import { ref } from "vue";
+import { supabase } from "../supabase";
 import TodoList from "../components/TodoList.vue";
 import Nav from "../components/Nav.vue";
 

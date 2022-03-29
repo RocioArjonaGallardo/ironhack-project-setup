@@ -2,6 +2,7 @@ import { defineStore } from "pinia";
 import { supabase } from "../supabase";
 
 export const useUserStore = defineStore("user", {
+  id: "userStore",
   state: () => ({
     user: null,
   }),
@@ -22,8 +23,13 @@ export const useUserStore = defineStore("user", {
         console.log(this.user);
       }
     },
-    signIn() {},
-    signOut() {},
+    signIn() {
+      //auth user
+      //storage user id and token
+    },
+    signOut() {
+      //delete user id and token
+    },
     persist: {
       enabled: true,
       strategies: [

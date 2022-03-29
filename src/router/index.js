@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
-import { supabase } from "../supabase";
+
 import Home from "../views/Home.vue";
 import Auth from "../views/Auth.vue";
 import SignIn from "../components/SignIn.vue";

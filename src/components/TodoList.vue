@@ -36,25 +36,25 @@
                 {{ task.title }}
               </span>
             </td>
-            <td class="text-center border-2 p-2 w-32">
+            <td v-if="state" class="text-center border-2 p-2 w-32">
               <span
                 @click="changeStatus"
                 class="pointer"
                 :class="{
                   danger: is_complete === 'To-do',
-                  warning: is_complete === 'In-progress',
+                  //warning: is_complete === 'In-progress',
                   success: is_complete === 'Done',
                 }"
                 >{{ task.is_complete }}</span
               >
             </td>
             <td class="text-center border-2 p-3">
-              <div @click="editTask">
+              <div @click="editTask" class="pointer">
                 <span class="text-center p-3">✍</span>
               </div>
             </td>
             <td class="text-center border-2 p-3">
-              <div @click="deleteTask">
+              <div @click="deleteTask" class="pointer">
                 <span class="text-center p-3">❌</span>
               </div>
             </td>
@@ -91,14 +91,24 @@ export default {
     return {
       task: "",
       editedTask: null,
-      statuses: ["To-do", "In-progress", "Done"],
+      state: ["To-do", "Done"], //"In-progress",
       tasks: [],
     };
   },
+  mounted() {
+    this.getAllTasks();
+  },
   methods: {
+    //al cargar la app se cargan todas las task que halla en usuario.
+    async getAllTasks() {
+      const task = await this.taskStore.fetchTasks();
+      this.tasks = task;
+      //console.log(task);
+    },
     async submitTask() {
       const res = await this.taskStore.addTask(this.task);
-      console.log("submit" + res);
+      this.task = res;
+      console.log("submit " + res);
       /*if (this.task.length === 0) return;
       if (this.editedTask === null) {
         this.tasks.push({
@@ -128,22 +138,13 @@ export default {
     },
 
     async changeStatus() {
-      const status = await this.taskStore.statusTask(this.statuses);
-      this.is_complete = status;
+      const status = await this.taskStore.statusTask(this.state);
+      // this.state = status;
       console.log(status);
       // let newIndex = this.is_complete.indexOf(this.tasks[index].status);
       // if (++newIndex > 2) newIndex = 0;
       // this.tasks[index].status = this.is_complete[newIndex];
     },
-    //al cargar la app se cargan todas las task que halla en usuario.
-    async getAllTasks() {
-      const task = await this.taskStore.fetchTasks();
-      this.tasks = task;
-      console.log(task);
-    },
-  },
-  mounted() {
-    this.getAllTasks();
   },
 };
 

@@ -38,23 +38,23 @@
             </td>
             <td v-if="state" class="text-center border-2 p-2 w-32">
               <span
-                @click="changeStatus"
+                @click="changeStatus(task)"
                 class="pointer"
                 :class="{
-                  danger: is_complete === 'To-do',
+                  danger: task.is_complete === 'To-do',
                   //warning: is_complete === 'In-progress',
-                  success: is_complete === 'Done',
+                  success: task.is_complete === 'Done',
                 }"
                 >{{ task.is_complete }}</span
               >
             </td>
             <td class="text-center border-2 p-3">
-              <div @click="editTask" class="pointer">
+              <div @click="editTask(task)" class="pointer">
                 <span class="text-center p-3">✍</span>
               </div>
             </td>
             <td class="text-center border-2 p-3">
-              <div @click="deleteTask" class="pointer">
+              <div @click="deleteTask(task)" class="pointer">
                 <span class="text-center p-3">❌</span>
               </div>
             </td>
@@ -122,24 +122,30 @@ export default {
       this.task = ""; */
     },
 
-    async deleteTask() {
-      const delTask = await this.taskStore.deleteTask();
+    async deleteTask(task) {
+      const delTask = await this.taskStore.deleteTask(task.id);
       this.task = delTask;
       console.log(delTask);
       // this.tasks.splice(index, 1);
     },
 
     async editTask() {
-      const task = await this.taskStore.updateTask(this.editedTask);
-      this.editedTask = task;
-      console.log(task);
+      const editedTask = await this.taskStore.updateTask(task.title);
+      this.task = editedTask;
+      console.log(editedTask);
       // this.task = this.tasks[index].title;
       // this.editedTask = index;
     },
 
-    async changeStatus() {
-      const status = await this.taskStore.statusTask(this.state);
-      // this.state = status;
+    async changeStatus(task) {
+      console.log(task);
+      if (task.is_complete === "To-do") {
+        task.is_complete = "Done";
+      } else {
+        task.is_complete = "To-do";
+      }
+      const status = await this.taskStore.statusTask(task.state);
+      this.is_complete = status;
       console.log(status);
       // let newIndex = this.is_complete.indexOf(this.tasks[index].status);
       // if (++newIndex > 2) newIndex = 0;

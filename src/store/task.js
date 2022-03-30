@@ -37,25 +37,23 @@ export const useTaskStore = defineStore("tasks", {
       }
     },
     async statusTask(state) {
-      const id = this.getId();
       try {
         const { data, error } = await supabase
           .from("tasks")
           .update({ is_complete: this.state })
-          .match({ id: this.id });
+          .match({ id: id });
         if (error) throw error;
         return data;
       } catch (error) {
         console.log(error);
       }
     },
-    async deleteTaks() {
-      const id = this.getId();
+    async deleteTask(id) {
       try {
         const { data, error } = await supabase
           .from("tasks")
           .delete()
-          .match({ id: this.id });
+          .match({ id: id });
         if (error) throw error;
         return data;
       } catch (error) {
@@ -63,12 +61,11 @@ export const useTaskStore = defineStore("tasks", {
       }
     },
     async updateTask(task) {
-      const id = this.getId();
       try {
         const { data, error } = await supabase
           .from("tasks")
           .update({ title: this.title })
-          .match({ id: this.id });
+          .match({ id: id });
         if (error) throw error;
         return data;
       } catch (error) {

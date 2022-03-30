@@ -36,4 +36,6 @@ Two main challeges:
 
 ## Demo
 
+Click to see the [DEMO](https://todo-app-ironhack.netlify.app) in netlify.
+
 ## To sumup

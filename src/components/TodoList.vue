@@ -89,6 +89,7 @@ export default {
   },
   data() {
     return {
+      //reactive values
       task: "",
       editedTask: null,
       state: ["To-do", "Done"], //"In-progress",
@@ -99,7 +100,7 @@ export default {
     this.getAllTasks();
   },
   methods: {
-    //al cargar la app se cargan todas las task que halla en usuario.
+    //al cargar la app se cargan todas las task que haya en usuario.
     async getAllTasks() {
       const task = await this.taskStore.fetchTasks();
       this.tasks = task;
@@ -108,33 +109,20 @@ export default {
     async submitTask() {
       const res = await this.taskStore.addTask(this.task);
       this.task = res;
-      console.log("submit " + res);
-      /*if (this.task.length === 0) return;
-      if (this.editedTask === null) {
-        this.tasks.push({
-          title: this.task,
-          status: "To-do",
-        });
-      } else {
-        this.tasks[this.editedTask].title = this.task;
-        this.editedTask = null;
-      }
-      this.task = ""; */
+      console.log(res);
     },
 
     async deleteTask(task) {
       const delTask = await this.taskStore.deleteTask(task.id);
       this.task = delTask;
       console.log(delTask);
-      // this.tasks.splice(index, 1);
     },
 
-    async editTask() {
-      const editedTask = await this.taskStore.updateTask(task.title);
+    async editTask(task) {
+      console.log(task);
+      const editedTask = await this.taskStore.updateTask(this.task);
       this.task = editedTask;
       console.log(editedTask);
-      // this.task = this.tasks[index].title;
-      // this.editedTask = index;
     },
 
     async changeStatus(task) {
@@ -144,24 +132,12 @@ export default {
       } else {
         task.is_complete = "To-do";
       }
-      const status = await this.taskStore.statusTask(task.state);
+      const status = await this.taskStore.statusTask(this.task);
       this.is_complete = status;
       console.log(status);
-      // let newIndex = this.is_complete.indexOf(this.tasks[index].status);
-      // if (++newIndex > 2) newIndex = 0;
-      // this.tasks[index].status = this.is_complete[newIndex];
     },
   },
 };
-
-// mounted() {
-//   if (useTaskStore.title) {
-//     this.title = title.value;
-//   }
-//   if (useTaskStore.status) {
-//     this.status = is_complete.value;
-//   }
-// },
 </script>
 
 <style scoped>

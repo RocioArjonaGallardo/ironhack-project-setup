@@ -1,6 +1,6 @@
 <template>
   <section class="flex justify-center">
-    <div class="container w-3/5 px-4 md:mx-auto">
+    <div class="container w-4/5 px-4 md:mx-auto">
       <!--form header -->
       <div class="max-w-sm mx-auto">
         <div class="m-8 text-center">
